@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% block title %} Login Page {% endblock %} {%block content%}
+
+
+<div class="page-header">
+    <h1>Login</h1>
+</div>
+<div style="width: 500px">
+    <form method="post" name="form-login">
+        {{ form.hidden_tag() }} {{ form.csrf_token }}
+
+
+        <div class="row">
+            <div class="col">
+                {{ form.email.label(class="form-control-label") }} {{ form.email(placeholder="name@example.com", class="form-control") }}
+            </div>
+        </div>
+        <div class="tinyspace"></div>
+        <div class="row">
+            <div class="col">
+                {{ form.password.label(class="form-control-label") }}
+                <div class="input-group mb-3">
+                    {{ form.password(placeholder="Your password", class="form-control") }}
+                    <span class="input-group-text" id="show-password-toggle"><i class="bi bi-eye" id="btn-icon"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="tinyspace"></div>
+
+        <div class="tinyspace"></div>
+        <div class="row">
+            <div class="col">{{ form.submit(class="btn btn-primary") }}</div>
+        </div>
+    </form>
+</div>
+<div class="space"></div>
+
+
+
+{% endblock %}

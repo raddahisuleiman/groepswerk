@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block title %} Market Page {% endblock %} {%block content%}
+<div class="row">
+
+
+
+    {% for book in books %} {% include 'includes/book_modals.html' %}
+
+    <div class="col-md-4 mb-4">
+        <div class="card">
+
+            <img src="static\{{book.photo}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{book.title}}</h5>
+                <p class="card-text">{{book.description}}</p>
+                <button class="btn btn-outline btn-success" data-toggle="modal" data-target="#Modal-add-{{ book.id }}">Add</button>
+            </div>
+        </div>
+    </div>
+
+
+    {% endfor %}
+</div>
+
+{% endblock %}

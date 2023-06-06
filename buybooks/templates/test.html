@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block title %} Home Page {% endblock %} {%block content%}
+<div class="container">
+    <form method="post" name="form-book" id="form-book" enctype="multipart/form-data">
+        {{form.hidden_tag()}}
+        {{ form.csrf_token }}
+        <div class="row">
+            <div class="col">
+                {{form.firstname.label(class="form-control-label")}}{{form.firstname(placeholder="Author Firstname", class="form-control")}}<br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{form.lastname.label(class="form-control-label")}}{{form.lastname(placeholder="Author Lastname", class="form-control")}}<br>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {{form.submit(class="btn btn-primary")}}
+            </div>
+        </div>
+
+    </form>
+</div>
+{% endblock %}

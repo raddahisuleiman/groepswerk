@@ -1,0 +1,60 @@
+{% extends 'base.html' %} {% block title %} Home Page {% endblock %} {%block content%}
+<div class="container">
+    <form method="post" name="form-book" id="form-book" enctype="multipart/form-data">
+        {{form.hidden_tag()}} {{ form.csrf_token }}
+        <div class="row">
+            <div class="col">
+                {{form.title.label(class="form-control-label")}}{{form.title(placeholder="Book Title", class="form-control")}}<br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{form.ISBN.label(class="form-control-label")}}{{form.ISBN(placeholder="Book ISBN", class="form-control")}}<br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{form.firstname.label(class="form-control-label")}}{{form.firstname(placeholder="Author firstname", class="form-control")}}<br>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {{form.lastname.label(class="form-control-label")}}{{form.lastname(placeholder="Author lastname", class="form-control")}}<br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{form.desc.label(class="form-control-label")}}{{form.desc(placeholder="Description", class="form-control")}}<br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{form.type.label(class="form-control-label")}}{{form.type(placeholder="Book Type", class ="form-control")}}<br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{form.genre.label(class="form-control-label")}}{{form.genre(class="form-control",placeholder="Genre")}}<br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{form.file(class="form-control")}} {{form.file.label(class="form-control-label")}}<br><br>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {{form.add_author()}} {{form.add_author.label}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{form.submit(class="btn btn-primary")}}
+            </div>
+        </div>
+
+    </form>
+</div>
+{% endblock %} {% block script %} {% endblock %}
